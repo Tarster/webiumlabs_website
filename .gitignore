@@ -1,0 +1,23 @@
+# Python pycache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Databases
+db.sqlite3
+*.db
+
+# Django local settings / env
+.env
+local_settings.py
+
+# Temp and logs
+*.log
+webium_template/
+inspect_*.py
+scratch_*.py
