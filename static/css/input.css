@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@source "../../templates/**/*.html";
+@source "../../core/**/*.py";
+
 @theme {
   --font-manrope: "Manrope", sans-serif;
   --font-satoshi: "Satoshi", sans-serif;
