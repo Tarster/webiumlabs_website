@@ -19,5 +19,6 @@ local_settings.py
 # Temp and logs
 *.log
 webium_template/
-inspect_*.py
-scratch_*.py
+
+# AI assistant workspace (investigation/refactoring scripts)
+ai_assist/
