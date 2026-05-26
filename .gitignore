@@ -22,3 +22,7 @@ webium_template/
 
 # AI assistant workspace (investigation/refactoring scripts)
 ai_assist/
+
+# Node dependencies
+node_modules/
+package-lock.json
