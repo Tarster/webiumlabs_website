@@ -111,11 +111,12 @@ class CoreViewsTestCase(TestCase):
         """Verify that the test 404 url loads successfully."""
         response = self.client.get('/404/')
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'Lost In Space?')
-        self.assertContains(response, 'Error 404')
+        self.assertContains(response, 'Page Not Found')
+        self.assertContains(response, '404')
+        self.assertContains(response, 'We can’t find the page you’re looking for.')
 
     def test_custom_handler404_triggers(self):
         """Verify that a non-existent URL triggers the custom handler404."""
         response = self.client.get('/this-path-does-not-exist-at-all/')
         self.assertEqual(response.status_code, 404)
-        self.assertContains(response, 'Lost In Space?', status_code=404)
+        self.assertContains(response, 'Page Not Found', status_code=404)

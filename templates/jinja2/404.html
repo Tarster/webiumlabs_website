@@ -42,7 +42,7 @@
 <body class="bg-dark-600 text-white font-manrope selection:bg-orange-500 selection:text-white overflow-x-hidden antialiased flex flex-col min-h-screen">
     
     <!-- Background mesh gradients & dot pattern -->
-    <div class="absolute top-0 left-0 w-full h-[800px] overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-0 left-0 w-full h-[1500px] overflow-hidden pointer-events-none z-0">
         <div class="absolute inset-0 bg-dot-pattern opacity-85"></div>
         <div class="absolute -top-[300px] left-[10%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]"></div>
         <div class="absolute -top-[100px] right-[5%] w-[450px] h-[450px] bg-orange-500/10 rounded-full blur-[100px]"></div>
@@ -133,34 +133,55 @@
     </header>
 
     <!-- Main Content -->
-    <main class="relative z-10 w-full max-w-6xl mx-auto px-6 flex-grow flex items-center justify-center py-16">
+    <main class="relative z-10 w-full max-w-6xl mx-auto px-6 py-12 flex-grow flex flex-col justify-between">
         
-        <section class="text-center max-w-xl mx-auto flex flex-col items-center gap-6">
-            <!-- Glowing 404 badge -->
-            <span class="inline-flex items-center px-6 py-2.5 rounded-full bg-dark-500 border border-orange-500/20 text-sm font-extrabold text-orange-500 tracking-wider shadow-[0_0_20px_rgba(228,111,3,0.1)] glow-orange-soft uppercase">
-                Error 404
+        <!-- 404 Hero Section -->
+        <section class="text-center max-w-xl mx-auto flex flex-col items-center gap-6 py-16">
+            <!-- Subtitle badge (Page Not Found) -->
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-500 border border-white/10 text-xs font-bold text-neutral-400 uppercase tracking-widest">
+                Page Not Found
             </span>
             
-            <h1 class="text-6xl md:text-8xl font-extrabold font-satoshi text-white tracking-tight leading-none mb-2 bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">
-                Lost In Space?
+            <!-- Giant glowing 404 header -->
+            <h1 class="text-[7rem] md:text-[9rem] font-extrabold font-satoshi text-white tracking-tighter leading-none bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent select-none filter drop-shadow-[0_0_35px_rgba(228,111,3,0.25)]">
+                404
             </h1>
             
-            <p class="text-neutral-400 text-base md:text-lg leading-relaxed mb-6">
-                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let’s get you back on track.
+            <!-- Copy Description -->
+            <p class="text-neutral-400 text-base md:text-lg leading-relaxed mb-4">
+                We can’t find the page you’re looking for.
             </p>
             
-            <a href="/" class="relative inline-flex items-center justify-center gap-1.5 px-8 py-3.5 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 hover:border-orange-600 transition-all duration-300 shadow-[0_0_25px_rgba(228,111,3,0.2)] select-none group">
+            <!-- Back to Home Button -->
+            <a href="/" class="relative inline-flex items-center justify-center gap-1.5 px-8 py-3.5 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 hover:border-orange-600 transition-all duration-300 shadow-[0_0_25px_rgba(228,111,3,0.2)] select-none">
                 Back to Home
-                <svg class="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
             </a>
+        </section>
+
+        <!-- Reality Banner -->
+        <section class="relative rounded-3xl overflow-hidden glass p-10 md:p-16 mb-8 text-center glow-orange-soft">
+            <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+            
+            <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-6">
+                <div class="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 mb-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold font-satoshi text-white tracking-tight leading-tight">
+                    Let’s Turn Your Dream Into Reality
+                </h2>
+                <p class="text-neutral-400 text-sm md:text-base max-w-md">
+                    We bring your vision to life with creativity and precision. Let’s make it happen.
+                </p>
+                <a href="/contact/" class="mt-4 relative inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 hover:border-orange-600 transition-all duration-300 shadow-[0_0_25px_rgba(228,111,3,0.2)] select-none">
+                    Book A Call
+                </a>
+            </div>
         </section>
         
     </main>
 
     <!-- Footer Bar -->
-    <footer class="relative z-10 border-t border-white/5 bg-dark-600/80 backdrop-blur-md mt-auto">
+    <footer class="relative z-10 border-t border-white/5 bg-dark-600/80 backdrop-blur-md">
         <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
             <!-- Logo -->
             <a href="/" class="flex items-center">
@@ -187,12 +208,12 @@
     <!-- GSAP Entry Animation -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            gsap.from("main > section > *", {
+            gsap.from("main > section", {
                 opacity: 0,
                 y: 30,
                 duration: 0.8,
-                stagger: 0.15,
-                ease: "power3.out"
+                stagger: 0.2,
+                ease: "power2.out"
             });
         });
     </script>
