@@ -13,6 +13,16 @@
             {% endfor %}
         </nav>
 
+        <!-- Let's Talk CTA (Desktop) -->
+        <div class="hidden md:block">
+            <a href="/contact/" class="relative inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full border border-orange-300 bg-dark-500 text-sm font-medium hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-[0_0_20px_rgba(228,111,3,0.15)] glow-orange-soft group">
+                Let's Talk
+                <svg class="w-3.5 h-3.5 text-orange-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H9M17 7V15"></path>
+                </svg>
+            </a>
+        </div>
+
         <!-- Hamburger Button (Mobile) -->
         <button @click="isOpen = !isOpen" class="block md:hidden text-neutral-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
             <svg x-show="!isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,5 +47,8 @@
         {% for link in nav_links %}
         <a href="{{ link.href }}" @click="isOpen = false" class="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-200 py-2 border-b border-white/5">{{ link.label }}</a>
         {% endfor %}
+        <a href="/contact/" class="mt-2 w-full text-center py-3 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 transition-all duration-300">
+            Let's Talk
+        </a>
     </div>
 </header>
