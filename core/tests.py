@@ -106,3 +106,16 @@ class CoreViewsTestCase(TestCase):
         
         # Verify no database record was created
         self.assertEqual(ContactSubmission.objects.count(), 0)
+
+    def test_page_404_view_loads(self):
+        """Verify that the test 404 url loads successfully."""
+        response = self.client.get('/404/')
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Lost In Space?')
+        self.assertContains(response, 'Error 404')
+
+    def test_custom_handler404_triggers(self):
+        """Verify that a non-existent URL triggers the custom handler404."""
+        response = self.client.get('/this-path-does-not-exist-at-all/')
+        self.assertEqual(response.status_code, 404)
+        self.assertContains(response, 'Lost In Space?', status_code=404)

@@ -74,3 +74,9 @@ def contact_view(request):
             'success': False,
             'error': "An internal error occurred. Please try again later."
         }, status=500)
+
+def page_404_view(request):
+    return render(request, '404.html')
+
+def handler404(request, exception=None):
+    return render(request, '404.html', status=404)

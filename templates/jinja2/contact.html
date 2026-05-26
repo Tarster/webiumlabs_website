@@ -93,6 +93,7 @@
         <div class="absolute -top-[100px] right-[10%] w-[350px] h-[350px] bg-orange-500/10 rounded-full blur-[90px]"></div>
     </div>
 
+
     <!-- Header Navigation -->
     <header x-data="{ isOpen: false }" class="relative z-50 w-full max-w-6xl mx-auto px-6 py-6">
         <div class="glass-dark rounded-full px-6 py-4 flex items-center justify-between">
@@ -102,16 +103,42 @@
             </a>
 
             <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center gap-8">
+            <nav class="hidden md:flex items-center gap-8" x-data="{ isPagesOpen: false }">
                 {% for link in nav_links %}
                 <a href="{{ link.href }}" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200">{{ link.label }}</a>
                 {% endfor %}
+
+                <!-- Pages Dropdown -->
+                <div class="relative" @click.away="isPagesOpen = false">
+                    <button @click="isPagesOpen = !isPagesOpen" class="inline-flex items-center gap-1 text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200 focus:outline-none cursor-pointer">
+                        Pages
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="isPagesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="isPagesOpen" 
+                         x-transition:enter="transition ease-out duration-150"
+                         x-transition:enter-start="opacity-0 scale-95"
+                         x-transition:enter-end="opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-100"
+                         x-transition:leave-start="opacity-100 scale-100"
+                         x-transition:leave-end="opacity-0 scale-95"
+                         class="absolute left-0 mt-2 w-36 rounded-2xl glass-dark p-2 flex flex-col gap-1 z-50 shadow-xl border border-white/5"
+                         style="display: none;">
+                        <a href="/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">Home</a>
+                        <a href="/contact/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">Contact</a>
+                        <a href="/404/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">404 Page</a>
+                    </div>
+                </div>
             </nav>
 
             <!-- Let's Talk CTA (Desktop) -->
             <div class="hidden md:block">
-                <a href="/contact/" class="relative inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-orange-300 bg-dark-500 text-sm font-medium hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-[0_0_20px_rgba(228,111,3,0.15)] glow-orange-soft">
+                <a href="/contact/" class="relative inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full border border-orange-300 bg-dark-500 text-sm font-medium hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-[0_0_20px_rgba(228,111,3,0.15)] glow-orange-soft group">
                     Let's Talk
+                    <svg class="w-3 h-3 text-orange-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H9M17 7V15"></path>
+                    </svg>
                 </a>
             </div>
 
@@ -139,6 +166,12 @@
             {% for link in nav_links %}
             <a href="{{ link.href }}" @click="isOpen = false" class="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-200 py-2 border-b border-white/5">{{ link.label }}</a>
             {% endfor %}
+            <div class="flex flex-col gap-2 py-2 border-b border-white/5">
+                <span class="text-xs font-bold text-neutral-500 uppercase tracking-wider">Pages</span>
+                <a href="/" @click="isOpen = false" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors py-1 pl-2">Home</a>
+                <a href="/contact/" @click="isOpen = false" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors py-1 pl-2">Contact</a>
+                <a href="/404/" @click="isOpen = false" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors py-1 pl-2">404 Page</a>
+            </div>
             <a href="/contact/" class="mt-2 w-full text-center py-3 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 transition-all duration-300">
                 Let's Talk
             </a>
@@ -150,8 +183,7 @@
         
         <!-- Hero Header -->
         <section class="text-center mb-16 max-w-2xl mx-auto">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-500 border border-white/10 text-xs font-semibold text-neutral-400 mb-6 uppercase tracking-wider">
-                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-500 border border-white/10 text-xs font-semibold text-neutral-400 mb-6 uppercase tracking-wider">
                 Let's Talk
             </span>
             <h1 class="text-4xl md:text-5xl font-extrabold font-satoshi text-white mb-4 tracking-tight leading-tight">
