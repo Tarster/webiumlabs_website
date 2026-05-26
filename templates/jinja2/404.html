@@ -41,96 +41,9 @@
 </head>
 <body class="bg-dark-600 text-white font-manrope selection:bg-orange-500 selection:text-white overflow-x-hidden antialiased flex flex-col min-h-screen">
     
-    <!-- Background mesh gradients & dot pattern -->
-    <div class="absolute top-0 left-0 w-full h-[1500px] overflow-hidden pointer-events-none z-0">
-        <div class="absolute inset-0 bg-dot-pattern opacity-85"></div>
-        <div class="absolute -top-[300px] left-[10%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]"></div>
-        <div class="absolute -top-[100px] right-[5%] w-[450px] h-[450px] bg-orange-500/10 rounded-full blur-[100px]"></div>
-    </div>
+    <!-- No background gradients for clean 404 -->
 
-    <!-- Header Navigation -->
-    <header x-data="{ isOpen: false }" class="relative z-50 w-full max-w-6xl mx-auto px-6 py-6">
-        <div class="glass-dark rounded-full px-6 py-4 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="/" class="flex items-center">
-                <img class="h-6 object-contain" src="https://framerusercontent.com/images/JuWcZDrNy5JqIlp4z2naCC0jbdw.svg" alt="Automatix Logo">
-            </a>
-
-            <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center gap-8" x-data="{ isPagesOpen: false }">
-                {% for link in nav_links %}
-                <a href="{{ link.href }}" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200">{{ link.label }}</a>
-                {% endfor %}
-
-                <!-- Pages Dropdown -->
-                <div class="relative" @click.away="isPagesOpen = false">
-                    <button @click="isPagesOpen = !isPagesOpen" class="inline-flex items-center gap-1 text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200 focus:outline-none cursor-pointer">
-                        Pages
-                        <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="isPagesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div x-show="isPagesOpen" 
-                         x-transition:enter="transition ease-out duration-150"
-                         x-transition:enter-start="opacity-0 scale-95"
-                         x-transition:enter-end="opacity-100 scale-100"
-                         x-transition:leave="transition ease-in duration-100"
-                         x-transition:leave-start="opacity-100 scale-100"
-                         x-transition:leave-end="opacity-0 scale-95"
-                         class="absolute left-0 mt-2 w-36 rounded-2xl glass-dark p-2 flex flex-col gap-1 z-50 shadow-xl border border-white/5"
-                         style="display: none;">
-                        <a href="/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">Home</a>
-                        <a href="/contact/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">Contact</a>
-                        <a href="/404/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">404 Page</a>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Let's Talk CTA (Desktop) -->
-            <div class="hidden md:block">
-                <a href="/contact/" class="relative inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full border border-orange-300 bg-dark-500 text-sm font-medium hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 shadow-[0_0_20px_rgba(228,111,3,0.15)] glow-orange-soft group">
-                    Let's Talk
-                    <svg class="w-3.5 h-3.5 text-orange-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H9M17 7V15"></path>
-                    </svg>
-                </a>
-            </div>
-
-            <!-- Hamburger Button (Mobile) -->
-            <button @click="isOpen = !isOpen" class="block md:hidden text-neutral-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
-                <svg x-show="!isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
-                <svg x-show="isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Drawer Menu -->
-        <div x-show="isOpen" 
-             x-transition:enter="transition ease-out duration-300"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             x-transition:leave="transition ease-in duration-200"
-             x-transition:leave-start="opacity-100 translate-y-0"
-             x-transition:leave-end="opacity-0 -translate-y-4"
-             class="md:hidden mt-4 glass-dark rounded-3xl p-6 flex flex-col gap-4 absolute left-6 right-6 z-50 shadow-2xl" 
-             style="display: none;">
-            {% for link in nav_links %}
-            <a href="{{ link.href }}" @click="isOpen = false" class="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-200 py-2 border-b border-white/5">{{ link.label }}</a>
-            {% endfor %}
-            <div class="flex flex-col gap-2 py-2 border-b border-white/5">
-                <span class="text-xs font-bold text-neutral-500 uppercase tracking-wider">Pages</span>
-                <a href="/" @click="isOpen = false" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors py-1 pl-2">Home</a>
-                <a href="/contact/" @click="isOpen = false" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors py-1 pl-2">Contact</a>
-                <a href="/404/" @click="isOpen = false" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors py-1 pl-2">404 Page</a>
-            </div>
-            <a href="/contact/" class="mt-2 w-full text-center py-3 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 transition-all duration-300">
-                Let's Talk
-            </a>
-        </div>
-    </header>
+    {% include 'navbar.html' %}
 
     <!-- Main Content -->
     <main class="relative z-10 w-full max-w-6xl mx-auto px-6 py-12 flex-grow flex flex-col justify-between">
@@ -158,52 +71,11 @@
             </a>
         </section>
 
-        <!-- Reality Banner -->
-        <section class="relative rounded-3xl overflow-hidden glass p-10 md:p-16 mb-8 text-center glow-orange-soft">
-            <div class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none"></div>
-            
-            <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-6">
-                <div class="w-12 h-12 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 mb-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold font-satoshi text-white tracking-tight leading-tight">
-                    Let’s Turn Your Dream Into Reality
-                </h2>
-                <p class="text-neutral-400 text-sm md:text-base max-w-md">
-                    We bring your vision to life with creativity and precision. Let’s make it happen.
-                </p>
-                <a href="/contact/" class="mt-4 relative inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-orange-300 bg-orange-500 text-white font-medium hover:bg-orange-600 hover:border-orange-600 transition-all duration-300 shadow-[0_0_25px_rgba(228,111,3,0.2)] select-none">
-                    Book A Call
-                </a>
-            </div>
-        </section>
+
         
     </main>
 
-    <!-- Footer Bar -->
-    <footer class="relative z-10 border-t border-white/5 bg-dark-600/80 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-            <!-- Logo -->
-            <a href="/" class="flex items-center">
-                <img class="h-5 object-contain" src="https://framerusercontent.com/images/JuWcZDrNy5JqIlp4z2naCC0jbdw.svg" alt="Automatix Logo">
-            </a>
-
-            <!-- Navigation Links -->
-            <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-                {% for link in footer_links_row1 %}
-                <a href="{{ link.href }}" class="text-sm text-neutral-400 hover:text-white transition-colors duration-200">{{ link.label }}</a>
-                {% endfor %}
-                {% for link in footer_links_row2 %}
-                <a href="{{ link.href }}" class="text-sm text-neutral-400 hover:text-white transition-colors duration-200">{{ link.label }}</a>
-                {% endfor %}
-            </nav>
-
-            <!-- Copyright -->
-            <p class="text-xs text-neutral-500">
-                Copyright Automatix. All right reserved.
-            </p>
-        </div>
-    </footer>
+    {% include 'footer.html' %}
 
     <!-- GSAP Entry Animation -->
     <script>
