@@ -15,28 +15,6 @@
                 link.label }}</a>
             {% endfor %}
 
-            <!-- Pages Dropdown -->
-            <div class="relative" @click.away="isPagesOpen = false">
-                <button @click="isPagesOpen = !isPagesOpen" class="inline-flex items-center gap-1 text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200 focus:outline-none cursor-pointer">
-                    Pages
-                    <svg class="w-3.5 h-3.5 transition-transform duration-200" :class="isPagesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div x-show="isPagesOpen" 
-                     x-transition:enter="transition ease-out duration-150"
-                     x-transition:enter-start="opacity-0 scale-95"
-                     x-transition:enter-end="opacity-100 scale-100"
-                     x-transition:leave="transition ease-in duration-100"
-                     x-transition:leave-start="opacity-100 scale-100"
-                     x-transition:leave-end="opacity-0 scale-95"
-                     class="absolute left-0 mt-2 w-36 rounded-2xl glass-dark p-2 flex flex-col gap-1 z-50 shadow-xl border border-white/5"
-                     style="display: none;">
-                    <a href="/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">Home</a>
-                    <a href="/contact/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">Contact</a>
-                    <a href="/404/" class="px-4 py-2 rounded-xl text-sm font-medium text-neutral-400 hover:text-white hover:bg-white/5 transition-all duration-200">404 Page</a>
-                </div>
-            </div>
         </nav>
 
         <!-- Let's Talk CTA (Desktop) -->

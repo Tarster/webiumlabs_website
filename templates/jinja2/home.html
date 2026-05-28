@@ -351,39 +351,234 @@ Automatix was professional, responsive, and results-oriented. Highly recommend t
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="mb-32">
+        <section id="services" class="mb-32 scroll-mt-24">
             <div class="text-center mb-16 max-w-2xl mx-auto">
                 <span
                     class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-500 border border-white/10 text-xs font-semibold text-neutral-400 mb-4 uppercase tracking-wider">
                     Our Services
                 </span>
                 <h2 class="text-3xl md:text-5xl font-extrabold font-satoshi text-white mb-4">
-                    Core Solutions for Modern Business
+                    Expertise That Drives Quality
                 </h2>
+                <p class="text-neutral-400 text-sm md:text-base">
+                    With deep expertise, we deliver quality solutions that drive success and exceed industry standards consistently.
+                </p>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {% for service in services %}
-                <div
-                    class="glass rounded-2xl p-6 hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 flex flex-col gap-4">
-                    <div
-                        class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                            </path>
-                        </svg>
+            <!-- Services Grid (3 Columns) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                               <!-- Card 1: Plan & Organize -->
+                <div class="glass rounded-3xl p-8 border border-white/5 bg-neutral-900/40 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/30 transition-all duration-500 flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <!-- Interactive Network Visual -->
+                        <div class="relative w-full h-48 rounded-2xl border border-white/10 overflow-hidden bg-neutral-950 flex items-center justify-center mb-6">
+                            <!-- Background Grid -->
+                            <img src="https://framerusercontent.com/images/YX9i3N9waLZ4JydRrYz5jum2W5o.png" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity pointer-events-none" alt="">
+                            
+                            <!-- Connecting Lines SVG -->
+                            <svg class="absolute inset-0 w-full h-full stroke-neutral-800 stroke-[1.5] pointer-events-none animate-pulse duration-1000" fill="none">
+                                <!-- Lines to the left -->
+                                <line x1="40%" y1="50%" x2="10%" y2="35%"></line>
+                                <line x1="40%" y1="50%" x2="18%" y2="38%"></line>
+                                <line x1="40%" y1="50%" x2="10%" y2="65%"></line>
+                                
+                                <!-- Lines to the right stacked cards -->
+                                <line x1="40%" y1="50%" x2="88%" y2="23%"></line>
+                                <line x1="40%" y1="50%" x2="88%" y2="50%"></line>
+                                <line x1="40%" y1="50%" x2="88%" y2="77%"></line>
+                            </svg>
+                            
+                            <!-- Background Grey Node (Far Left) -->
+                            <div class="absolute top-[38%] left-[18%] -translate-y-1/2 w-9 h-9 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center p-2 shadow-md z-10">
+                                <img src="https://framerusercontent.com/images/hpu0TmZwLCrVSOtd6hOIG7lP8.svg" class="w-full h-full object-contain opacity-40" alt="">
+                            </div>
+                            
+                            <!-- Central Hub (Active Orange Node) -->
+                            <div class="absolute left-[40%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-gradient-to-br from-neutral-800 to-neutral-950 border border-white/15 shadow-[0_0_20px_rgba(255,255,255,0.05)] flex items-center justify-center p-2.5">
+                                <img src="https://framerusercontent.com/images/sv2a4eygGjiTAs6GVt1u05sNYo.svg" class="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(249,115,22,0.3)]" alt="Central Hub">
+                                <div class="absolute inset-0 rounded-full border border-orange-500/20 animate-ping pointer-events-none"></div>
+                            </div>
+                            
+                            <!-- Stacked Cards (Right Side Column) -->
+                            <!-- Node 1 (Top Right) -->
+                            <div class="absolute top-[23%] right-[8%] -translate-y-1/2 w-9 h-9 rounded-lg bg-neutral-900 border border-white/10 flex items-center justify-center p-2 shadow-md z-10 hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300">
+                                <img src="https://framerusercontent.com/images/7bxHqxSQqyn94XGykE6IVNtw1Eo.svg" class="w-full h-full object-contain opacity-70" alt="">
+                            </div>
+                            
+                            <!-- Node 2 (Middle Right) -->
+                            <div class="absolute top-[50%] right-[8%] -translate-y-1/2 w-9 h-9 rounded-lg bg-neutral-900 border border-white/10 flex items-center justify-center p-2 shadow-md z-10 hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300">
+                                <img src="https://framerusercontent.com/images/hpu0TmZwLCrVSOtd6hOIG7lP8.svg" class="w-full h-full object-contain opacity-70" alt="">
+                            </div>
+                            
+                            <!-- Node 3 (Bottom Right) -->
+                            <div class="absolute top-[77%] right-[8%] -translate-y-1/2 w-9 h-9 rounded-lg bg-neutral-900 border border-white/10 flex items-center justify-center p-2 shadow-md z-10 hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300">
+                                <img src="https://framerusercontent.com/images/K4mauElkun2mVNvT5AVW15LwJWI.svg" class="w-full h-full object-contain opacity-70" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Card details -->
+                        <h3 class="text-2xl font-bold font-satoshi text-white mb-3">Plan & Organize</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">We enhance efficiency by integrating apps and reducing downtime.</p>
                     </div>
-                    <h3 class="text-lg font-bold font-satoshi text-white">{{ service.title }}</h3>
-                    <p class="text-xs text-neutral-400 leading-relaxed">{{ service.description }}</p>
                 </div>
-                {% endfor %}
+
+                <!-- Card 2: Custom Projects -->
+                <div class="glass rounded-3xl p-8 border border-white/5 bg-neutral-900/40 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/30 transition-all duration-500 flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <!-- Interactive Code Snippet Panel -->
+                        <div class="relative w-full h-48 rounded-2xl border border-white/10 overflow-hidden bg-neutral-950 p-4 flex gap-3.5 mb-6 shadow-inner font-mono text-[10px] leading-relaxed">
+                            <!-- Line numbers sidebar -->
+                            <div class="flex flex-col text-neutral-600 text-right pr-3 border-r border-white/5 select-none space-y-0.5">
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span>7</span>
+                            </div>
+                            
+                            <!-- Code space -->
+                            <div class="flex-1 text-neutral-400 select-none space-y-0.5">
+                                <div><span class="text-orange-400">class</span> <span class="text-white font-semibold">ChatBot</span> {</div>
+                                <div>  address <span class="text-neutral-500">public</span> owner;</div>
+                                <div>  int <span class="text-neutral-500">private</span> response;</div>
+                                <div>  <span class="text-orange-400">constructor</span>() {</div>
+                                <div>    owner = msg.sender;</div>
+                                <div>  }</div>
+                                <div class="flex items-center gap-1">
+                                    <span class="text-orange-400">  function</span>
+                                    <span class="w-1.5 h-3 bg-orange-500 animate-pulse inline-block"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card details -->
+                        <h3 class="text-2xl font-bold font-satoshi text-white mb-3">Custom Projects</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">We created a versatile chatbot that understands diverse questions.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Smart Automation -->
+                <div class="glass rounded-3xl p-8 border border-white/5 bg-neutral-900/40 backdrop-blur-md relative overflow-hidden group hover:border-orange-500/30 transition-all duration-500 flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <!-- Interactive Flow Panel -->
+                        <div class="relative w-full h-48 rounded-2xl border border-white/10 overflow-hidden bg-neutral-950 flex flex-col items-center justify-center gap-3 mb-6">
+                            <!-- Background Bubbles -->
+                            <img src="https://framerusercontent.com/images/RQWGh7f8Cnb8blhaJXengKND4Bw.png" class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none" alt="">
+                            
+                            <!-- Dashed connecting line background -->
+                            <div class="absolute w-[2px] h-28 bg-gradient-to-b from-orange-500/40 via-neutral-800 to-neutral-900 pointer-events-none"></div>
+                            
+                            <!-- Trigger (Active Node) -->
+                            <div class="relative z-10 flex items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/90 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.15)] w-48">
+                                <div class="w-5 h-5 rounded bg-orange-500/10 border border-orange-500/20 flex items-center justify-center p-1">
+                                    <img src="https://framerusercontent.com/images/c9Gh7XP4x4E6sMd2DeLSYdnLA.png" class="w-full h-full object-contain" alt="">
+                                </div>
+                                <span class="text-xs font-semibold text-white font-satoshi">Trigger</span>
+                            </div>
+                            
+                            <!-- Prompts (Inactive Node) -->
+                            <div class="relative z-10 flex items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/80 border border-white/5 w-48 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                                <div class="w-5 h-5 rounded bg-neutral-850 flex items-center justify-center p-1">
+                                    <img src="https://framerusercontent.com/images/3EjDBnc06ZqM2DalAwEiwBISOzc.png" class="w-full h-full object-contain" alt="">
+                                </div>
+                                <span class="text-xs font-semibold text-neutral-400 font-satoshi">Prompts</span>
+                            </div>
+                            
+                            <!-- Send Email (Inactive Node) -->
+                            <div class="relative z-10 flex items-center gap-2.5 px-4 py-2 rounded-xl bg-neutral-900/80 border border-white/5 w-48 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                                <div class="w-5 h-5 rounded bg-neutral-850 flex items-center justify-center p-1">
+                                    <img src="https://framerusercontent.com/images/osFEtXrggbbUFT2PcLhEKwtKw.png" class="w-full h-full object-contain" alt="">
+                                </div>
+                                <span class="text-xs font-semibold text-neutral-400 font-satoshi">Send Email</span>
+                            </div>
+                        </div>
+
+                        <!-- Card details -->
+                        <h3 class="text-2xl font-bold font-satoshi text-white mb-3">Smart Automation</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed">We analyze operations and suggest AI solutions to boost efficiency.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Floating Badge Tiles -->
+            <div class="mt-16 flex flex-col items-center gap-4">
+                <!-- Row 1 -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- AI-Driven Solutions -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/sPmibGCLfmQVJHX0tlJqMt1ZOb8.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">AI-Driven Solutions</span>
+                    </div>
+
+                    <!-- Serverless Computing -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/TpMsQ4JuQXH87CLdEKVrih7OjaY.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">Serverless Computing</span>
+                    </div>
+
+                    <!-- Cloud Integration -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/fGRMJzZ1klCadiGWxHOwXOZ9qK0.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">Cloud Integration</span>
+                    </div>
+
+                    <!-- Data Insight -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/OT81xXSmHrXj05Gjwm0H4r7m0L8.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">Data Insight</span>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- Analytics -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/0EJSat3AKzJRdD6xxuuiwMg63y4.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">Analytics</span>
+                    </div>
+
+                    <!-- API Security -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/FuYRMfKxtC6kJDq6v671cgsNGY.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">API Security</span>
+                    </div>
+
+                    <!-- Real-Time -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/QKgOGYR4rTNLO3KDEZLPDU6wvU.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">Real-Time</span>
+                    </div>
+
+                    <!-- Ad Targeting -->
+                    <div class="inline-flex items-center gap-2.5 px-4.5 py-2.5 rounded-full bg-neutral-900/60 border border-white/5 shadow-md hover:border-orange-500/30 hover:glow-orange-soft transition-all duration-300 backdrop-blur-md group cursor-default">
+                        <div class="w-6 h-6 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center p-1.5 flex-shrink-0 group-hover:border-orange-500/20 group-hover:bg-orange-500/5 transition-all duration-300">
+                            <img src="https://framerusercontent.com/images/Hy7hoU7QAz66ago0Fs6owYjA.svg" class="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 group-hover:drop-shadow-[0_0_4px_rgba(249,115,22,0.3)] transition-all duration-300" alt="">
+                        </div>
+                        <span class="text-xs font-semibold text-neutral-300 group-hover:text-white transition-colors duration-300 font-satoshi">Ad Targeting</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section id="pricing" class="mb-32 scroll-mt-6">
+        <!-- <section id="pricing" class="mb-32 scroll-mt-6">
             <div class="text-center mb-16 max-w-2xl mx-auto">
                 <span
                     class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-500 border border-white/10 text-xs font-semibold text-neutral-400 mb-4 uppercase tracking-wider">
@@ -392,9 +587,9 @@ Automatix was professional, responsive, and results-oriented. Highly recommend t
                 <h2 class="text-3xl md:text-5xl font-extrabold font-satoshi text-white mb-4">
                     Transparent, Flexible Plans
                 </h2>
-            </div>
+            </div> -->
 
-            <!-- Two pricing cards -->
+            <!-- Two pricing cards
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {% for plan in pricing_plans %}
                 <div class="glass rounded-3xl p-8 relative overflow-hidden group hover:border-orange-500/30 hover:glow-orange transition-all duration-300 flex flex-col justify-between"
@@ -448,7 +643,7 @@ Automatix was professional, responsive, and results-oriented. Highly recommend t
                 </div>
                 {% endfor %}
             </div>
-        </section>
+        </section> -->
 
         <!-- Testimonials Section -->
         <section id="testimonials" class="mb-32">
@@ -572,9 +767,7 @@ Automatix was professional, responsive, and results-oriented. Highly recommend t
             const canvases = document.querySelectorAll(".benefit-canvas");
             canvases.forEach(canvas => new CanvasParticles(canvas));
 
-            // Staggered reveal animations using GSAP
-            gsap.registerPlugin(ScrollTrigger);
-
+            // Staggered reveal animations for main sections on page load
             gsap.from("main > section", {
                 opacity: 0,
                 y: 30,
@@ -583,18 +776,33 @@ Automatix was professional, responsive, and results-oriented. Highly recommend t
                 ease: "power2.out"
             });
 
-            // Scroll trigger for fade reveals
-            gsap.from("#services .glass", {
-                scrollTrigger: {
-                    trigger: "#services",
-                    start: "top 80%",
-                },
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "power2.out"
-            });
+            // Robust IntersectionObserver for Services Cards reveal (prevents layout shift / FOUC / scroll position bugs)
+            const servicesSection = document.getElementById("services");
+            if (servicesSection) {
+                // Set initial state: hidden and slightly translated down
+                gsap.set("#services .glass", { opacity: 0, y: 20 });
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            gsap.to("#services .glass", {
+                                opacity: 1,
+                                y: 0,
+                                duration: 0.8,
+                                stagger: 0.1,
+                                ease: "power2.out"
+                            });
+                            // Stop observing once triggered
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.05,
+                    rootMargin: "0px 0px -10% 0px"
+                });
+
+                observer.observe(servicesSection);
+            }
         });
     </script>
 </body>
