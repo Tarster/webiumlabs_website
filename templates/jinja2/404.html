@@ -46,7 +46,7 @@
     {% include 'navbar.html' %}
 
     <!-- Main Content -->
-    <main id="physics-container" class="relative z-10 w-full max-w-6xl mx-auto px-6 py-12 flex-grow flex flex-col justify-between min-h-[70vh]">
+    <main id="physics-container" class="relative z-10 w-full max-w-6xl mx-auto px-6 py-12 flex-grow flex flex-col justify-between min-h-[70vh]" style="min-height: 70vh;">
         
         <!-- 404 Hero Section -->
         <section class="text-center max-w-xl mx-auto flex flex-col items-center gap-6 py-12">
@@ -141,8 +141,29 @@
             
             if (!container || tiles.length === 0) return;
 
+            // Measure container dimensions once outside the frame update loop (eliminates layout thrashing)
             let containerWidth = container.clientWidth;
             let containerHeight = container.clientHeight;
+            
+            // Bulletproof fallback in case clientHeight is 0 or unrendered yet
+            if (containerHeight < 100) {
+                containerHeight = window.innerHeight * 0.7;
+            }
+            if (containerWidth < 100) {
+                containerWidth = window.innerWidth;
+            }
+
+            // Update bounds dynamically on resize instead of every single physics frame
+            window.addEventListener("resize", () => {
+                containerWidth = container.clientWidth;
+                containerHeight = container.clientHeight;
+                if (containerHeight < 100) {
+                    containerHeight = window.innerHeight * 0.7;
+                }
+                if (containerWidth < 100) {
+                    containerWidth = window.innerWidth;
+                }
+            });
             
             const gravity = 0.45;
             const friction = 0.985;
@@ -165,6 +186,10 @@
                     const rect = tile.getBoundingClientRect();
                     const w = rect.width;
                     const h = rect.height;
+
+                    // Anchor top-left to 0,0 so we can position exclusively using GPU-accelerated translate3d transforms
+                    tile.style.left = "0px";
+                    tile.style.top = "0px";
 
                     // Space them out horizontally initially
                     const step = containerWidth / (tiles.length + 1);
@@ -251,9 +276,6 @@
 
                 // Physics update loop
                 function updatePhysics() {
-                    containerWidth = container.clientWidth;
-                    containerHeight = container.clientHeight;
-
                     // 1. Resolve Tile-to-Tile collisions
                     for (let i = 0; i < bodies.length; i++) {
                         for (let j = i + 1; j < bodies.length; j++) {
@@ -357,10 +379,8 @@
                             }
                         }
 
-                        // Apply 2D transforms and absolute positions exactly matching Framer structure
-                        body.element.style.left = `${body.x}px`;
-                        body.element.style.top = `${body.y}px`;
-                        body.element.style.transform = `translate(-50%, -50%) rotate(${body.rotation}deg)`;
+                        // Apply 2D transforms using translate3d for GPU acceleration (buttery-smooth, no reflows!)
+                        body.element.style.transform = `translate3d(${body.x}px, ${body.y}px, 0) translate(-50%, -50%) rotate(${body.rotation}deg)`;
                     });
 
                     requestAnimationFrame(updatePhysics);
