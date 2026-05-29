@@ -14,7 +14,7 @@ class CoreViewsTestCase(TestCase):
         response = self.client.get(self.home_url)
         self.assertEqual(response.status_code, 200)
         # Verify content rendered by Jinja2 contains key signature words
-        self.assertContains(response, 'Automatix')
+        self.assertContains(response, 'WebiumLabs')
         self.assertContains(response, 'Agency')
 
     def test_contact_page_loads(self):

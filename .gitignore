@@ -25,4 +25,9 @@ ai_assist/
 
 # Node dependencies
 node_modules/
-package-lock.json
+
+# IDE and Editor folders
+.vscode/
+
+# Antigravity CLI
+.antigravitycli/

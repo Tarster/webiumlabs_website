@@ -2,9 +2,20 @@
 <header x-data="{ isOpen: false }" class="relative z-50 w-full max-w-6xl mx-auto px-6 py-6">
     <div class="glass-dark rounded-full px-6 py-4 flex items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center">
-            <img class="h-6 object-contain" src="https://framerusercontent.com/images/JuWcZDrNy5JqIlp4z2naCC0jbdw.svg"
-                alt="Automatix Logo">
+        <a href="/" class="flex items-center gap-2.5 group">
+            <svg class="h-6 w-6 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Stylized W Icon -->
+                <path d="M4 6L10 18L13 11L16 18L22 6" stroke="url(#nav-logo-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="nav-logo-gradient" x1="4" y1="6" x2="22" y2="18" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#e46f03"/>
+                        <stop offset="1" stop-color="#ffb168"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="text-xl font-bold font-satoshi tracking-tight text-white select-none">
+                Webium<span class="text-orange-500">Labs</span>
+            </span>
         </a>
 
         <!-- Desktop Links -->
