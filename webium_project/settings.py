@@ -23,14 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1x3^ccr*0!_v=lc#tp)(_jn=tv_obdck7^+_uhj+9$c-(0zpe7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['webiumlabs.com', 'www.webiumlabs.com', '127.0.0.1']
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -138,3 +141,13 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.tarster.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mailer@tarster.com'
+EMAIL_HOST_PASSWORD = 'Django_Secure_Pass_2026'
+DEFAULT_FROM_EMAIL = 'WebiumLabs <mailer@tarster.com>'
+CONTACT_EMAIL = 'contact@webiumlabs.com'

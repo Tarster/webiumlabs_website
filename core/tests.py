@@ -31,8 +31,8 @@ class CoreViewsTestCase(TestCase):
             'name': 'Alice Smith',
             'email': 'alice@example.com',
             'company': 'Altech Solutions',
-            'service': 'Analytics & Reports',
-            'budget': '$10.000 - $25.000',
+            'service': 'Automation',
+            'budget': '$10,000 - $25,000',
             'message': 'We want to build a real-time data dashboard using AI.'
         }
         response = self.client.post(
@@ -51,8 +51,8 @@ class CoreViewsTestCase(TestCase):
         self.assertEqual(sub.name, 'Alice Smith')
         self.assertEqual(sub.email, 'alice@example.com')
         self.assertEqual(sub.company, 'Altech Solutions')
-        self.assertEqual(sub.service, 'Analytics & Reports')
-        self.assertEqual(sub.budget, '$10.000 - $25.000')
+        self.assertEqual(sub.service, 'Automation')
+        self.assertEqual(sub.budget, '$10,000 - $25,000')
         self.assertEqual(sub.message, 'We want to build a real-time data dashboard using AI.')
 
     def test_contact_submission_success_form(self):
@@ -61,8 +61,8 @@ class CoreViewsTestCase(TestCase):
             'Name': 'Bob Jones',
             'Email': 'bob@example.com',
             'Company': 'Jones Tech',
-            'Service': 'Brand Strategy',
-            'Budget': 'Under $10.000',
+            'Service': 'website creation',
+            'Budget': 'Under $10,000',
             'message': 'We need a full brand redesign.'
         }
         response = self.client.post(self.contact_url, data=payload)
@@ -76,8 +76,8 @@ class CoreViewsTestCase(TestCase):
         self.assertEqual(sub.name, 'Bob Jones')
         self.assertEqual(sub.email, 'bob@example.com')
         self.assertEqual(sub.company, 'Jones Tech')
-        self.assertEqual(sub.service, 'Brand Strategy')
-        self.assertEqual(sub.budget, 'Under $10.000')
+        self.assertEqual(sub.service, 'website creation')
+        self.assertEqual(sub.budget, 'Under $10,000')
         self.assertEqual(sub.message, 'We need a full brand redesign.')
 
     def test_contact_submission_missing_fields(self):
