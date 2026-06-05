@@ -1,33 +1,29 @@
-# Python pycache and compiled files
-__pycache__/
-*.py[cod]
+
 *$py.class
-
-# Virtual Environment
-.venv/
-venv/
-ENV/
-
-# Databases
-db.sqlite3
-*.db
-
-# Django local settings / env
-.env
-local_settings.py
-
-# Temp and logs
-*.log
-webium_template/
-
-# AI assistant workspace (investigation/refactoring scripts)
 ai_assist/
-
+# AI assistant workspace (investigation/refactoring scripts)
+.antigravitycli/
+# Antigravity CLI
+# Databases
+*.db
+db.sqlite3
+# Django local settings / env
+.DS_Store
+.env
+ENV/
+.idea/
+# IDE and Editor folders
+local_settings.py
+*.log
 # Node dependencies
 node_modules/
-
-# IDE and Editor folders
+*.pyc
+__pycache__/
+*.py[cod]
+# Python pycache and compiled files
+# Temp and logs
+.venv/
+venv/
+# Virtual Environment
 .vscode/
-
-# Antigravity CLI
-.antigravitycli/
+webium_template/
