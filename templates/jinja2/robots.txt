@@ -1,4 +1,11 @@
 User-agent: *
+Disallow: /admin/
+Disallow: /jet/
 Allow: /
 
-Sitemap: https://webiumlabs.com/sitemap.xml
+# Standard web crawler rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
